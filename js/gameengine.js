@@ -10,7 +10,7 @@ var myBackground;
 var change=false;
 
 function startGame() {
-    myGamePiece = new component(61, 134, myGamePieceAnim[myGamePieceAnimIdx], 10, 370, "image");
+    myGamePiece = new component(61, 134, myGamePieceAnim[myGamePieceAnimIdx], 10, 360, "image");
     myBackground = new component(965, 495, "img/bg1.png", 0, 0, "background");
     myGameArea.start();
 }
@@ -91,18 +91,18 @@ function updateGameArea() {
 }
 
 function move(dir) {
-    if (dir == "up") {myBackground.speedY = 1; 
+    if (dir == "up") {myBackground.speedY = 1/2; 
 		myGamePieceAnimIdx=--myGamePieceAnimIdx%myGamePieceAnim.length;
 	}
 		
     if (dir == "down") {
-		myBackground.speedY = -1; 
+		myBackground.speedY = -1/2; 
 		myGamePieceAnimIdx=++myGamePieceAnimIdx%myGamePieceAnim.length;
 	}
-    if (dir == "left") {myBackground.speedX = 1; 
+    if (dir == "left") {myBackground.speedX = 1/2; 
 		myGamePieceAnimIdx=--myGamePieceAnimIdx%myGamePieceAnim.length;
 	}
-    if (dir == "right") {myBackground.speedX = -1; 
+    if (dir == "right") {myBackground.speedX = -1/2; 
 		myGamePieceAnimIdx=++myGamePieceAnimIdx%myGamePieceAnim.length;
 	}
 }
